@@ -4,11 +4,14 @@
 'Say My Name Again
 'https://github.com/gingsean5/MultiplicationTable
 
+Option Strict On
+Option Explicit On
+
 Module MultiplicationTable
     Dim userInput As String
     Dim tableSize As Integer
     Dim problem As Boolean
-    Dim temp As String
+    Dim temp As Integer
     Sub Main()
 
         Console.WriteLine("Please enter one number for a multiplication table up to that number's multiples.")
@@ -27,10 +30,16 @@ Module MultiplicationTable
                 Console.WriteLine($"Enjoy your {userInput} x {userInput} multiplication table")
             End If
         End While
+        Dim banana As Integer
+        Dim apple As Integer
+
         For j = 1 To tableSize
             For i = 1 To tableSize
-                temp = i * j
-                Console.Write(temp.PadLeft(5))
+                banana = CInt(i)
+                apple = CInt(j)
+
+                temp = banana * apple
+                Console.Write(CStr(temp).PadLeft(5))
             Next
             Console.WriteLine()
         Next
